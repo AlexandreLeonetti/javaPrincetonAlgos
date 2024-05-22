@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import In.In;
 import StdOut.StdOut;
+import java.lang.Comparable;
 
 public class Main{
     public static void sort(Comparable[] a) { /* See Algorithms 2.1, 2.2, 2.3, 2.4, 2.5, or 2.7. */
