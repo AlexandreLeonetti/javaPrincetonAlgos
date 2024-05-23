@@ -7,6 +7,22 @@ import StdOut.StdOut;
 
 public class Main{
         /* sort */
+        public static void sort(Comparable[] a){
+            /* in place selection sort */
+            int N = a.length;
+            for( int i = 0; i<N; i++){
+                //Comparable min = a[i];
+                int indexMin = i;
+                for (int j =i+1;j<N; j++){
+                    if(less(a[j],a[indexMin])){
+                        //min = a[j];
+                        indexMin = j;
+                    }
+                }
+                exch(a, i, indexMin);
+
+            }
+        }
 
         /* less */
         public static boolean less(Comparable v, Comparable w){
@@ -41,7 +57,7 @@ public class Main{
     public static void main(String[] args){
         Comparable[] arr = In.readStrings();
         /* main call */
-        //sort()
+        sort(arr);
         assert(isSorted(arr));
         show(arr);
     }
