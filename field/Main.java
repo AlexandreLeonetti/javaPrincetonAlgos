@@ -24,6 +24,40 @@ public class Main{
             }
         }
 
+        public static void insertionSortMir(Comparable[] a){
+            /* in place insertionSort */
+            int N = a.length;
+
+            for(int i=1; i<N; i++){
+                
+                //insertion process
+                for(int j=i-1; j>=0; j--){
+                    if(less(a[j],a[j+1])){
+                        exch(a, j, j+1);
+                    }
+                }
+            }
+        }
+
+        public static void insertionSort(Comparable[] a){
+            /* in place insertionSort */
+            int N = a.length;
+
+            for(int i=1; i<N; i++){
+                
+                //insertion process
+                for(int j=i-1; j>=0; j--){
+                    if(less(a[j+1],a[j])){
+                        exch(a, j, j+1);
+                    }
+                }
+            }
+        }
+
+        public static void shellSort(Comparable[] a){
+
+        }
+
         /* less */
         public static boolean less(Comparable v, Comparable w){
             return v.compareTo(w) < 0; 
@@ -57,7 +91,10 @@ public class Main{
     public static void main(String[] args){
         Comparable[] arr = In.readStrings();
         /* main call */
-        selectionSort(arr);
+        //selectionSort(arr);
+        insertionSortMir(arr);
+        insertionSort(arr);
+
         assert(isSorted(arr));
         show(arr);
     }
