@@ -7,7 +7,7 @@ import StdOut.StdOut;
 
 public class Main{
         /* sort */
-        public static void sort(Comparable[] a){
+        public static void selectionSort(Comparable[] a){
             /* in place selection sort */
             int N = a.length;
             for( int i = 0; i<N; i++){
@@ -57,7 +57,7 @@ public class Main{
     public static void main(String[] args){
         Comparable[] arr = In.readStrings();
         /* main call */
-        sort(arr);
+        selectionSort(arr);
         assert(isSorted(arr));
         show(arr);
     }
